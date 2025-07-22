@@ -86,8 +86,11 @@ public class GenerateStars : MonoBehaviour
         s.transform.parent = StarParent.transform;
 
         // StarComp comp = s.AddComponent<StarComp>();
-        
+
         // comp.intialize(starName, position, radius, distance, luminosity, type);
+
+        // to flip east and west ??
+        position.x = position.x * -1;
 
         s.transform.localPosition = position*areaRadius;
 
@@ -102,7 +105,7 @@ public class GenerateStars : MonoBehaviour
             s.transform.localPosition = new Vector3(s.transform.localPosition.x, UnityEngine.Random.Range(4f, 7f), s.transform.localPosition.z);
         }
         
-        Debug.Log(s.transform.localPosition);
+        // Debug.Log(s.transform.localPosition);
 
         // s.transform.localScale = new Vector3(comp.radius*0.5f, comp.radius*0.5f, comp.radius*0.5f);
         s.transform.localScale = new Vector3(radius*0.5f, radius*0.5f, radius*0.5f);
